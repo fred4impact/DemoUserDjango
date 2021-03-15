@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'customer',
     'courier',
     'bootstrap4',
+    'social_django',
     
 ]
 
@@ -74,6 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -138,4 +141,23 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL ='home'
 LOGOUT_REDIRECT_URL ='home'
 LOGIN_URL = '/login'
+
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+# Social AUTH  BACKEND
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+   
+)
+
+
+# facebook auth keys 
+SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET') 
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id, name, email'
+}
+
 

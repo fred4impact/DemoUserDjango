@@ -31,7 +31,8 @@
                           <p class=" text-center mt-3">
                             New to Xpercel ?      <a href="{% url 'accounts:register' %}?next={{ request.GET.next }}"> <b>Join Today </b> </a>
                           </p>
-                           <a href="" class="btn btn-outline-primary btn-block">Sign In With Facebook </a>
+                          <a href="{% url 'social:begin' 'facebook' %}?next={{ request.GET.next }}"
+                          class="btn btn-outline-primary btn-block" >Sign In with Facebook</a>
                         </form>
                     </div>
                 </div>
