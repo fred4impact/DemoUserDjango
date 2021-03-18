@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'accounts',
+    'accounts.apps.AccountsConfig',
     'customer',
     'courier',
     'bootstrap4',
@@ -160,4 +160,12 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
     'fields': 'id, name, email'
 }
 
+# email backend 
 
+# EMAIL_HOST = config('EMAIL_HOST')
+# EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+# DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL') 
+# EMAIL_BACKEND = config('EMAIL_BACKEND')
